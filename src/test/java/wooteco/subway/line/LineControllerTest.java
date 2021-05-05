@@ -3,6 +3,7 @@ package wooteco.subway.line;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.Matchers.containsInAnyOrder;
 import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.hasSize;
 
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
@@ -55,7 +56,7 @@ class LineControllerTest extends AcceptanceTest {
             .statusCode(HttpStatus.CREATED.value())
             .body("color", equalTo("bg-red-600"))
             .body("name", equalTo("신분당선"))
-            .body("stations", containsInAnyOrder(id_양재역, id_강남역));
+            .body("stations", hasSize(2));
     }
 
     @DisplayName("노선 생성 - 실패(이름 중복)")

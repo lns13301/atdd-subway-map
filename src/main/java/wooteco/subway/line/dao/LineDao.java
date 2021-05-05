@@ -17,4 +17,6 @@ public interface LineDao {
     void removeLine(Long id);
 
     void update(Long id, String name, String color);
+
+    Optional<Line> findLineByColor(String color);
 }

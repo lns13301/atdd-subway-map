@@ -74,4 +74,12 @@ public class LineDaoJdbcTemplate implements LineDao {
         String sql = "UPDATE line SET name = ?, color = ? WHERE id = ?";
         jdbcTemplate.update(sql, name, color, id);
     }
+
+    @Override
+    public Optional<Line> findLineByColor(String color) {
+        final String sql = "SELECT * FROM line WHERE color = ?";
+        return jdbcTemplate.query(sql, lineRowMapper, color)
+            .stream()
+            .findAny();
+    }
 }
