@@ -1,10 +1,10 @@
 package wooteco.subway.line;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
+
 import wooteco.subway.section.Section;
+import wooteco.subway.section.Sections;
 import wooteco.subway.station.Station;
 
 public class Line {
@@ -12,7 +12,7 @@ public class Line {
     private Long id;
     private String name;
     private String color;
-    private List<Section> sections; //일급컬렉션으로 만들자.
+    private Sections sections;
 
     public Line(String name, String color) {
         this(null, name, color, new ArrayList<>());
@@ -22,8 +22,11 @@ public class Line {
         this(id, name, color, new ArrayList<>());
     }
 
-    public Line(Long id, String name, String color,
-        List<Section> sections) {
+    public Line(Long id, String name, String color, List<Section> sections) {
+        this(id, name, color, new Sections(sections));
+    }
+
+    public Line(Long id, String name, String color, Sections sections) {
         this.id = id;
         this.name = name;
         this.color = color;
@@ -68,13 +71,6 @@ public class Line {
     }
 
     public List<Station> asStations() {
-        final Set<Station> stations = new HashSet<>();
-
-        sections.stream().forEach(section -> {
-            stations.add(section.getDownStation());
-            stations.add(section.getUpStation());
-        });
-        //TODO Station의 순서 소팅
-        return new ArrayList<>(stations);
+        return sections.findStations();
     }
 }
