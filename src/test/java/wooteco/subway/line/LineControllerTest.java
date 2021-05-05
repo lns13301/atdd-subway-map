@@ -87,6 +87,16 @@ class LineControllerTest extends AcceptanceTest {
         assertThat(response.statusCode()).isEqualTo(HttpStatus.BAD_REQUEST.value());
         assertThat(response.header("Location")).isBlank();
     }
+    
+    @DisplayName("노선 생성 - 실패(없는 역 넣기)")
+    @Test
+    public void createLine_notExistStation() throws Exception{
+        //given
+        
+        //when
+        
+        //then
+    }
 
     @DisplayName("노선 목록 조회 - 성공")
     @Test

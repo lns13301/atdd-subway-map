@@ -7,6 +7,7 @@ import java.util.stream.Collectors;
 import javax.validation.Valid;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -47,7 +48,11 @@ public class LineController {
     }
 
     @PostMapping("/lines")
-    public ResponseEntity<LineResponse> createStation(@RequestBody @Valid LineRequest lineRequest) {
+    public ResponseEntity<LineResponse> createStation(@RequestBody @Valid LineRequest lineRequest, BindingResult bindingResult) {
+        if(bindingResult.hasErrors()) {
+            return ResponseEntity.badRequest().build();
+        }
+
         final Long upStationId = lineRequest.getUpStationId();
         final Long downStationId = lineRequest.getDownStationId();
 

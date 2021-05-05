@@ -4,7 +4,6 @@ import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 import wooteco.subway.line.dao.LineDao;
-import wooteco.subway.station.dao.StationDao;
 
 @Component
 public class LineRequestValidator implements Validator {
