@@ -1,13 +1,13 @@
 package wooteco.subway.section.dao;
 
-import java.util.HashMap;
-import java.util.Map;
-import javax.sql.DataSource;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import org.springframework.stereotype.Repository;
-import wooteco.subway.line.Line;
 import wooteco.subway.section.Section;
+
+import javax.sql.DataSource;
+import java.util.HashMap;
+import java.util.Map;
 
 @Repository
 public class SectionDaoJdbcTemplate implements SectionDao {

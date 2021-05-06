@@ -1,11 +1,12 @@
 package wooteco.subway.line;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import wooteco.subway.section.Section;
+import wooteco.subway.section.SectionPair;
 import wooteco.subway.section.Sections;
 import wooteco.subway.station.Station;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Line {
 
@@ -64,6 +65,10 @@ public class Line {
 
     public void addSection(Section section) {
         sections.add(section);
+    }
+
+    public void addSection(SectionPair sectionPair) {
+        sections.add(sectionPair);
     }
 
     public boolean isSameColor(String color) {

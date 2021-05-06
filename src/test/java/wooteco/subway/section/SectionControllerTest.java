@@ -1,11 +1,6 @@
 package wooteco.subway.section;
 
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.hasSize;
-
 import io.restassured.RestAssured;
-import java.util.HashMap;
-import java.util.Map;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -17,6 +12,9 @@ import wooteco.subway.line.Line;
 import wooteco.subway.line.dao.LineDao;
 import wooteco.subway.station.Station;
 import wooteco.subway.station.dao.StationDao;
+
+import java.util.HashMap;
+import java.util.Map;
 
 @DisplayName("섹션 테스트")
 class SectionControllerTest extends AcceptanceTest {

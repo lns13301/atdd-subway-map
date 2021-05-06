@@ -1,5 +1,6 @@
 package wooteco.subway.section;
 
+import wooteco.subway.exception.WrongSectionException;
 import wooteco.subway.station.Station;
 
 public class Section {
@@ -58,5 +59,23 @@ public class Section {
 
     public Long downStationId() {
         return downStation.getId();
+    }
+
+    public void updateUpStation(Section section) {
+        validateDistance(section.distance);
+        this.upStation = section.getDownStation();
+        this.distance = this.distance - section.distance;
+    }
+
+    public void updateDownStation(Section section) {
+        validateDistance(section.distance);
+        this.upStation = section.getUpStation();
+        this.distance = this.distance - section.distance;
+    }
+
+    private void validateDistance(int target) {
+        if (distance - target <= 0) {
+            throw new WrongSectionException();
+        }
     }
 }
