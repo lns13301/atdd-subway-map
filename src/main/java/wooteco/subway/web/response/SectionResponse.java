@@ -1,10 +1,9 @@
-package wooteco.subway.section.web;
+package wooteco.subway.web.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import wooteco.subway.domain.Section;
-import wooteco.subway.station.StationResponse;
 
 @Getter
 @NoArgsConstructor

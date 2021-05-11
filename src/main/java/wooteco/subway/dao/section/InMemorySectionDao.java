@@ -1,4 +1,4 @@
-package wooteco.subway.section.dao;
+package wooteco.subway.dao.section;
 
 import org.springframework.util.ReflectionUtils;
 import wooteco.subway.domain.Section;

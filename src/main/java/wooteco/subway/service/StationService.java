@@ -1,11 +1,11 @@
-package wooteco.subway.station;
+package wooteco.subway.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import wooteco.subway.domain.Station;
 import wooteco.subway.exception.station.DuplicatedStationException;
 import wooteco.subway.exception.station.StationNotFoundException;
-import wooteco.subway.station.dao.StationDao;
+import wooteco.subway.dao.station.StationDao;
 
 import java.util.List;
 

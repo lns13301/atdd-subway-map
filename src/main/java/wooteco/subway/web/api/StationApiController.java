@@ -1,10 +1,13 @@
-package wooteco.subway.station;
+package wooteco.subway.web.api;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import wooteco.subway.domain.Station;
+import wooteco.subway.service.StationService;
+import wooteco.subway.web.request.StationRequest;
+import wooteco.subway.web.response.StationResponse;
 
 import java.net.URI;
 import java.util.List;
@@ -12,7 +15,7 @@ import java.util.stream.Collectors;
 
 @RequiredArgsConstructor
 @RestController
-public class StationController {
+public class StationApiController {
 
     private final StationService stationService;
 

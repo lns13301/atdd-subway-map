@@ -1,7 +1,8 @@
-package wooteco.subway.line.web;
+package wooteco.subway.web.validate;
 
 import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
+import wooteco.subway.web.request.LineRequest;
 
 public class LineValidator implements Validator {
     @Override

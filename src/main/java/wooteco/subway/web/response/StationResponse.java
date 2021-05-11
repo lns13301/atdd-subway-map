@@ -1,4 +1,4 @@
-package wooteco.subway.station;
+package wooteco.subway.web.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

@@ -1,4 +1,4 @@
-package wooteco.subway.section;
+package wooteco.subway.service;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -7,9 +7,9 @@ import wooteco.subway.domain.Sections;
 import wooteco.subway.exception.line.LineNotFoundException;
 import wooteco.subway.exception.section.NotEnoughSectionException;
 import wooteco.subway.exception.station.StationNotFoundException;
-import wooteco.subway.line.dao.LineDao;
-import wooteco.subway.section.dao.SectionDao;
-import wooteco.subway.station.dao.StationDao;
+import wooteco.subway.dao.line.LineDao;
+import wooteco.subway.dao.section.SectionDao;
+import wooteco.subway.dao.station.StationDao;
 
 import java.util.List;
 import java.util.Optional;

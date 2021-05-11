@@ -1,4 +1,4 @@
-package wooteco.subway.section.dao;
+package wooteco.subway.dao.section;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;

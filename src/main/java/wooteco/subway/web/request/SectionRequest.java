@@ -1,4 +1,4 @@
-package wooteco.subway.section.web;
+package wooteco.subway.web.request;
 
 import javax.validation.constraints.Positive;
 
